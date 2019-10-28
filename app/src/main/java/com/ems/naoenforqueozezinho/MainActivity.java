@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import com.ems.naoenforqueozezinho.ui.Database;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -23,16 +24,20 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
+import java.sql.SQLOutput;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    SQLiteDatabase db;
+    SQLiteDatabase connection;
+    Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.createDatabase();
+        this.db = new Database(getBaseContext());
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -68,11 +73,5 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    public void createDatabase () {
-        db = openOrCreateDatabase("db_forca", Context.MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS palavras(idPlavra NUMBER, palavra VARCHAR, dica VARCHAR, tema NUMBER);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS temas(idTema NUMBER, tema VARCHAR);");
     }
 }

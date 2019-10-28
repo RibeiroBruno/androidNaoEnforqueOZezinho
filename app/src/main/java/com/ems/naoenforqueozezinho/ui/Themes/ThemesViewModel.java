@@ -1,14 +1,14 @@
-package com.ems.naoenforqueozezinho.ui.ListWords;
+package com.ems.naoenforqueozezinho.ui.Themes;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ListWordsViewModel extends ViewModel {
+public class ThemesViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public ListWordsViewModel() {
+    public ThemesViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is slideshow fragment");
     }

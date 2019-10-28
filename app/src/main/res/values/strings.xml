@@ -10,4 +10,9 @@
     <string name="menu_home">Iniciar Jogo</string>
     <string name="menu_gallery">Palavras</string>
     <string name="menu_tools">Temas</string>
+    <string name="hintInputWord">Digite a palvra</string>
+    <string name="labelForInputText">Digite a palavra:</string>
+    <string name="labelForInputTextThemeOption">Escolha um tema</string>
+    <string name="labelForInputTheme">Digite um tema:</string>
+    <string name="hintInputTheme">Digite um tema</string>
 </resources>
