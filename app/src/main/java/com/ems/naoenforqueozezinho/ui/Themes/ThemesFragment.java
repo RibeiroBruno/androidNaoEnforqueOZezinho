@@ -1,20 +1,13 @@
 package com.ems.naoenforqueozezinho.ui.Themes;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.InputDevice;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
-import android.view.textservice.TextInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,20 +17,16 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.ems.naoenforqueozezinho.MainActivity;
 import com.ems.naoenforqueozezinho.R;
 import com.ems.naoenforqueozezinho.ui.DatabaseController;
 import com.ems.naoenforqueozezinho.ui.Tema;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.io.Serializable;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 
 public class ThemesFragment extends Fragment {
@@ -60,8 +49,8 @@ public class ThemesFragment extends Fragment {
         this.root = inflater.inflate(R.layout.fragment_themes, container, false);
         this.fragmentManager = getFragmentManager();
         this.connection = new DatabaseController(root.getContext());
-        this.inputTheme = root.findViewById(R.id.inputTheme);
-        this.btnConfirm = root.findViewById(R.id.btnCreateTheme);
+        this.inputTheme = root.findViewById(R.id.inputWord);
+        this.btnConfirm = root.findViewById(R.id.btnCreateWord);
         this.listViewThemes = root.findViewById(R.id.listViewThemes);
 
         this.themesList = connection.getTemasList();
@@ -72,7 +61,7 @@ public class ThemesFragment extends Fragment {
         listViewThemes.setOnItemClickListener(this.eventEditItem(this));
         listViewThemes.setOnItemLongClickListener(this.eventRemoveItem(this));
 
-        final TextView textView = root.findViewById(R.id.txtViewTitleThemes);
+        final TextView textView = root.findViewById(R.id.txtViewTitleWords);
         themesViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -86,8 +75,8 @@ public class ThemesFragment extends Fragment {
         return new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String themeText = inputTheme.getText().toString();
-                if (themeText.trim().length() == 0) {
+                String themeText = inputTheme.getText().toString().trim();
+                if (themeText.length() == 0) {
                     Snackbar.make(view, "Não são aceitas palavras vazias", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                     clearText();
@@ -134,8 +123,8 @@ public class ThemesFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == 1) {
-            String theme = data.getStringExtra("theme");
-            if (theme.trim().length() == 0) {
+            String theme = data.getStringExtra("theme").trim();
+            if (theme.length() == 0) {
                 Snackbar.make(this.root, "Campo vazio", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 clearText();

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textViewInputWord2"
+        android:id="@+id/textViewInputWordTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -14,10 +14,10 @@
         android:text="@string/labelForInputTextThemeOption"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputTheme" />
+        app:layout_constraintTop_toBottomOf="@+id/inputWord" />
 
     <EditText
-        android:id="@+id/inputTheme"
+        android:id="@+id/inputWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
@@ -28,10 +28,10 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewInputTheme" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewInputWord" />
 
     <TextView
-        android:id="@+id/txtViewTitleThemes"
+        android:id="@+id/txtViewTitleWords"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -44,17 +44,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnCreateTheme"
+        android:id="@+id/btnCreateWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Criar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner_themes" />
 
     <TextView
-        android:id="@+id/textViewInputTheme"
+        android:id="@+id/textViewInputWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -62,10 +62,10 @@
         android:text="@string/labelForInputText"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtViewTitleThemes" />
+        app:layout_constraintTop_toBottomOf="@+id/txtViewTitleWords" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_themes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -75,5 +75,5 @@
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewInputWord2" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewInputWordTheme" />
 </androidx.constraintlayout.widget.ConstraintLayout>
