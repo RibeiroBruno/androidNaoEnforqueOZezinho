@@ -1,10 +1,11 @@
 package com.ems.naoenforqueozezinho.ui;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 import com.ems.naoenforqueozezinho.ui.Tables.*;
 
-public class Word {
+public class Word implements Serializable {
     private String idPalavra;
     private String temaId;
     private String palavra;

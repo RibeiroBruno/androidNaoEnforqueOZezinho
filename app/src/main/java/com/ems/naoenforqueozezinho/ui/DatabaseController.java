@@ -27,16 +27,51 @@ public class DatabaseController {
         return tema.getTemaId();
     }
 
-    public ArrayList<String> getTemasList () {
-        ArrayList temas = new ArrayList<String>();
+    public ArrayList<Tema> getTemasList () {
+        ArrayList temas = new ArrayList<Tema>();
         TemaTable themeTable = new TemaTable();
-        String[] campos =  {themeTable.getIdTema(),themeTable.getTema()};
-        //ORDER BY tema ASC
-        Cursor c = db.query(themeTable.getTableName(), campos, null, null, null, null, null, null);
-        while (c.moveToNext()) {
+        String[] campos =  {themeTable.getIdTema(), themeTable.getTema()};
+
+        Log.i("log", "Inicio consulta");
+        Cursor c = this.db.query(themeTable.getTableName(), campos, null, null, null, null, null, null);
+        Log.i("log", "Registros: " + c.getCount());
+
+        if (c.getCount() <= 0) return temas;
+        c.moveToFirst();
+        do {
+            Log.i("log", c.getString(1));
             Tema tema = new Tema(c.getString(0), c.getString(1));
-            temas.add(tema.getTema());
-        }
+            temas.add(tema);
+        } while (c.moveToNext());
+        Log.i("log", "Fim consulta");
         return temas;
+    }
+
+    public void setThemeItem (Tema theme) {
+        TemaTable themeTable = new TemaTable();
+        ContentValues values = new ContentValues();
+        values.put("tema", theme.getTema());
+
+        String whereClause = themeTable.getIdTema() + " = ? ";
+        String[] whereArgs = { theme.getTemaId() };
+
+        Log.i("log", "Inicio consulta");
+        int result = this.db.update(themeTable.getTableName(), values, whereClause, whereArgs);
+        Log.i("log", "Registros atualizado");
+    }
+
+    public void removeThemeItem (String themeId) {
+        TemaTable themeTable = new TemaTable();
+        String whereClause = themeTable.getIdTema() + " = ? ";
+        String[] whereArgs = { themeId };
+
+        Log.i("log", "Inicio consulta");
+        int result = this.db.delete(themeTable.getTableName(), whereClause, whereArgs);
+        Log.i("log", "Registros atualizado");
+    }
+
+    public void cleartThemeList () {
+        TemaTable themeTable = new TemaTable();
+        db.execSQL("DELETE FROM " + themeTable.getTableName());
     }
 }

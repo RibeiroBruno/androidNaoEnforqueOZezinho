@@ -18,6 +18,7 @@ public class WordsViewModel extends ViewModel {
 
     public WordsViewModel() {
         mText = new MutableLiveData<>();
+        mText.setValue("Palavras");
     }
 
     public LiveData<String> getText() {

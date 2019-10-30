@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.ems.naoenforqueozezinho.R;
 import com.ems.naoenforqueozezinho.ui.DatabaseController;
+import com.ems.naoenforqueozezinho.ui.Tema;
 import com.ems.naoenforqueozezinho.ui.Word;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ public class WordsFragment extends Fragment {
     private WordsViewModel createWordsViewModel;
     private ListView wordslistView;
     private ArrayList<Word> wordsList = new ArrayList<Word>();
-    private ArrayList<String> themesList;
+    private ArrayList<Tema> themesList;
     private ArrayAdapter<Word> wordsListAdapter;
     private ArrayAdapter adapter;
     private DatabaseController connection;

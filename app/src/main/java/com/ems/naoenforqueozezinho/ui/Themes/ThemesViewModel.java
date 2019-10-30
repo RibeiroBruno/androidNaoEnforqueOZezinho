@@ -10,7 +10,7 @@ public class ThemesViewModel extends ViewModel {
 
     public ThemesViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("Temas");
     }
 
     public LiveData<String> getText() {

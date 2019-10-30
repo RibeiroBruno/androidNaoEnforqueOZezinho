@@ -15,4 +15,12 @@
     <string name="labelForInputTextThemeOption">Escolha um tema</string>
     <string name="labelForInputTheme">Digite um tema:</string>
     <string name="hintInputTheme">Digite um tema</string>
+    <string name="dialog_themeEdit">Editar</string>
+    <string name="dialog_themeEdit_true">Confirmar</string>
+    <string name="dialog_themeEdit_false">Cancelar</string>
+    <string name="dialog_theme_edit_input">Digite um tema</string>
+    <string name="dialog_theme_remove">Remover</string>
+    <string name="dialog_theme_remove_true">Confirmar</string>
+    <string name="dialog_theme_remove_false">Cancelar</string>
+    <string name="dialog_theme_remove_view">Deseja Remover o item?</string>
 </resources>

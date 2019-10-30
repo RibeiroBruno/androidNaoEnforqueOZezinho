@@ -2,10 +2,11 @@ package com.ems.naoenforqueozezinho.ui;
 
 import android.database.sqlite.SQLiteDatabase;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.UUID;
 
-public class Tema {
+public class Tema implements Serializable {
     private String temaId;
     private String tema;
     SQLiteDatabase db;
