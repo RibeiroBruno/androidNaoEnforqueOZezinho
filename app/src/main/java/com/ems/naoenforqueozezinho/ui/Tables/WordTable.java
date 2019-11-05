@@ -7,7 +7,7 @@ public class WordTable {
     private String idPalavra = "idPalavra";
     private String palavra = "palavra";
     private String dica = "dica";
-    private String tema = "idTema";
+    private String idTema = "idTema";
 
     public WordTable() {
         this.tableName = "palavras";
@@ -30,15 +30,31 @@ public class WordTable {
         return idPalavra;
     }
 
+    public String getIdPalavraAs() {
+        return tableName + "." + idPalavra;
+    }
+
     public String getPalavra() {
         return palavra;
+    }
+
+    public String getPalavraAs() {
+        return tableName + "." + palavra;
     }
 
     public String getDica() {
         return dica;
     }
 
+    public String getDicaAs() {
+        return tableName + "." + dica;
+    }
+
     public String getTema() {
-        return tema;
+        return idTema;
+    }
+
+    public String getTemaAs() {
+        return tableName + "." + idTema;
     }
 }

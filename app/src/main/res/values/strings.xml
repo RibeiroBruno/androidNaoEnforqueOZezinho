@@ -2,8 +2,8 @@
     <string name="app_name">Nao Enforque o Zezinho</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Bem-vindo</string>
+    <string name="nav_header_subtitle">Não Enforque o Zezinho</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
@@ -23,4 +23,14 @@
     <string name="dialog_theme_remove_true">Confirmar</string>
     <string name="dialog_theme_remove_false">Cancelar</string>
     <string name="dialog_theme_remove_view">Deseja Remover o item?</string>
+    <string name="hintInputTip">Digite uma dica:</string>
+    <string name="hintDialogInputWord">Ajuste a palavra</string>
+    <string name="hint_dialog_input_tip">Ajuste a dica</string>
+    <string name="btn_play_game">Iniciar Jogo</string>
+    <string name="txtViewThemeChoices">Escolha um tema:</string>
+    <string name="title_activity_game">GameActivity</string>
+    <string name="title_activity_game2">GameActivity2</string>
+    <string name="hintInputAttemp">Insira uma letra ou palavra...</string>
+    <string name="btn_attemp_char">Letra</string>
+    <string name="btn_attemp_word">Arriscar palavra!</string>
 </resources>

@@ -47,5 +47,17 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {}
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        String commandCreateWords = "CREATE TABLE IF NOT EXISTS " + wordTable.getTableName() + " ( " +
+                TextUtils.join(", ", wordTable.getColumns()) + " );";
+        String commandCreateThemes = "CREATE TABLE IF NOT EXISTS " + themeTable.getTableName() + " ( " +
+                TextUtils.join(", ", themeTable.getColumns()) + " );";
+        db.execSQL("DROP TABLE " + themeTable.getTableName());
+        db.execSQL("DROP TABLE " + wordTable.getTableName());
+        Log.i(TAG,"Banco : " + commandCreateWords);
+        Log.i(TAG,"Banco : " + commandCreateThemes);
+        db.execSQL(commandCreateWords);
+        db.execSQL(commandCreateThemes);
+        System.out.println("Banco Iniciado");
+    }
 }

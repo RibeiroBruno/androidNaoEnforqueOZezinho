@@ -15,21 +15,29 @@ public class Word implements Serializable {
     /**
      * Método construtor da classe
      *
-     * @param temaId
+     * @param tema
      * @param palavra
      * @param dica
      */
-    public Word(String palavra, String dica, String temaId, String tema) {
+    public Word(String palavra, String dica, Tema tema) {
         this.setPalavra(palavra);
         this.setDica(dica);
-        this.setTemaId(temaId);
+        this.setTemaId(tema.getTemaId());
         this.idPalavra = this.generateId();
-        this.setTemaString(tema);
+        this.setTemaString(tema.getTemaId());
+    }
+
+    public Word(String idPalavra, String palavra, String dica, Tema tema) {
+        this.idPalavra = idPalavra;
+        this.setPalavra(palavra);
+        this.setDica(dica);
+        this.setTemaId(tema.getTemaId());
+        this.setTemaString(tema.getTema());
     }
 
     @Override
     public String toString() {
-        return " - Palavra: " + this.palavra + "\n - Dica: " + this.dica + "\n - Tema: " + this.getTemaString();
+        return " - Palavra: " + this.palavra + "\n - Tema: " + this.getTemaString() + "\n - Dica: " + this.dica;
     }
 
     private String generateId() {

@@ -5,22 +5,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/inputTip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="50dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/hintInputTip"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewInputTip" />
+
     <TextView
         android:id="@+id/textViewInputWordTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:text="@string/labelForInputTextThemeOption"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputWord" />
+        app:layout_constraintTop_toBottomOf="@+id/inputTip" />
 
     <EditText
         android:id="@+id/inputWord"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="50dp"
         android:ems="10"
         android:gravity="center"
@@ -35,7 +52,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:text="Palavras"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
@@ -47,7 +64,7 @@
         android:id="@+id/btnCreateWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Criar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +75,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:text="@string/labelForInputText"
         android:textColor="@color/colorPrimary"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +91,29 @@
         android:gravity="center"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewInputWordTheme" />
+
+    <TextView
+        android:id="@+id/textViewInputTip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="Digite uma dica para a palavra:"
+        android:textColor="#030303"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputWord" />
+
+    <ListView
+        android:id="@+id/listViewWords"
+        android:layout_width="0dp"
+        android:layout_height="385dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateWord" />
 </androidx.constraintlayout.widget.ConstraintLayout>

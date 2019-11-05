@@ -2,22 +2,16 @@ package com.ems.naoenforqueozezinho.ui.Themes;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import com.ems.naoenforqueozezinho.R;
 import com.ems.naoenforqueozezinho.ui.Tema;
@@ -35,7 +29,7 @@ public class ModalEdit extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = requireActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.dialog_edit_theme, null);
-        this.inputTheme = (EditText) view.findViewById(R.id.dialog_edit_input);
+        this.inputTheme = (EditText) view.findViewById(R.id.dialog_word_edit_input);
         this.theme = (Tema) getArguments().getSerializable("theme");
         this.inputTheme.setText(this.theme.getTema());
 

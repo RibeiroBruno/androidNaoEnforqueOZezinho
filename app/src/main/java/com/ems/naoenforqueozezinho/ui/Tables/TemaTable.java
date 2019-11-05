@@ -26,7 +26,9 @@ public class TemaTable {
         return idTema;
     }
 
-    public String getTema() {
-        return tema;
-    }
+    public String getIdTemaAs() { return tableName + "." + idTema; }
+
+    public String getTema() { return tema; }
+
+    public String getTemaAs() { return tableName + "." + tema; }
 }
