@@ -23,6 +23,7 @@
     <string name="dialog_theme_remove_true">Confirmar</string>
     <string name="dialog_theme_remove_false">Cancelar</string>
     <string name="dialog_theme_remove_view">Deseja Remover o item?</string>
+    <string name="dialog_play_again_title">Deseja Jogar Novamente?</string>
     <string name="hintInputTip">Digite uma dica:</string>
     <string name="hintDialogInputWord">Ajuste a palavra</string>
     <string name="hint_dialog_input_tip">Ajuste a dica</string>
