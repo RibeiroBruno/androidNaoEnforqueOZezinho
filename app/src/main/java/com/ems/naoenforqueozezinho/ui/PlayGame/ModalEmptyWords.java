@@ -7,19 +7,24 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.EditText;
 
 import androidx.fragment.app.DialogFragment;
 
 import com.ems.naoenforqueozezinho.R;
-import com.ems.naoenforqueozezinho.ui.Word;
 
-public class ModalPlayAgain extends DialogFragment {
+public class ModalEmptyWords extends DialogFragment {
 
     View view;
     LayoutInflater inflater;
+    Intent intent;
+    String modalTitle;
+    public ModalEmptyWords() { }
 
-    public ModalPlayAgain() { }
+    public InterfaceCommunicator interfaceCommunicator;
+
+    public interface InterfaceCommunicator {
+        void sendEmptyWordsRequestCode(int code);
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -27,19 +32,15 @@ public class ModalPlayAgain extends DialogFragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         inflater = requireActivity().getLayoutInflater();
         view = inflater.inflate(R.layout.dialog_play_again, null);
+        modalTitle = getArguments().getString("modalTitle");
 
         builder
                 .setView(view)
-                .setTitle(R.string.dialog_play_again_title)
-                .setPositiveButton(R.string.dialog_theme_remove_true, new DialogInterface.OnClickListener() {
+                .setTitle(modalTitle)
+                .setNegativeButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Intent intent = new Intent();
-                        onActivityResult(getTargetRequestCode(), 1, intent);
-                        dialog.dismiss();
-                    }
-                })
-                .setNegativeButton(R.string.dialog_theme_remove_false, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
+                        interfaceCommunicator = (InterfaceCommunicator) getActivity();
+                        interfaceCommunicator.sendEmptyWordsRequestCode(1);
                         dialog.cancel();
                     }
                 });

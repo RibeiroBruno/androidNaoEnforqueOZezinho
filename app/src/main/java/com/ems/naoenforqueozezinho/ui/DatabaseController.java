@@ -112,7 +112,7 @@ public class DatabaseController {
         ArrayList temas = new ArrayList<Tema>();
 
         Log.i("log", "Inicio consulta");
-        Cursor c = this.db.rawQuery("SELECT " +
+        Cursor c = this.db.rawQuery("SELECT DISTINCT " +
                         themeTable.getIdTemaAs() + ", " +
                         themeTable.getTemaAs() + " " +
                         "FROM " + wordTable.getTableName()+ " " +

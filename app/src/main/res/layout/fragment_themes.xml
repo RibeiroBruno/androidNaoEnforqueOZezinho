@@ -25,7 +25,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:text="Temas"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
@@ -57,10 +57,12 @@
     <ListView
         android:id="@+id/listViewThemes"
         android:layout_width="0dp"
-        android:layout_height="519dp"
+        android:layout_height="0dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="50dp"
+        android:scrollbarStyle="insideInset"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCreateWord" />

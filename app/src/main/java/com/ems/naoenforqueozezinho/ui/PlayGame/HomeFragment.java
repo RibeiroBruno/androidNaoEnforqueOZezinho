@@ -60,6 +60,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Tema theme = (Tema) spinnerThemes.getSelectedItem();
+                Fragment frag = new Fragment();
                 Intent it = new Intent(root.getContext(), GameActivity.class);
                 Bundle dados = new Bundle();
                 dados.putSerializable("theme", theme);
